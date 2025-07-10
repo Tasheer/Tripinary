@@ -26,7 +26,7 @@ const TripPlanner = () => {
 
     const handleCitySearch = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/experience/${city}`);
+            const res = await axios.get(`https://tripinary-backend.onrender.com/api/experience/${city}`);
             setAllExperiences(res.data);
 
             const placeBudgetMap = {};
@@ -206,7 +206,7 @@ const TripPlanner = () => {
                     <div className="scroll-container" ref={hotelScrollRef}>
                         {filteredHotels.map((exp, index) => (
                             <div key={index} className={`card hotel-card ${selectedHotel === exp ? 'selected' : ''}`}>
-                                <img src={`http://localhost:5000/hotelImages/${exp.hotelImage}`} alt="Hotel" />
+                                <img src={`https://tripinary-backend.onrender.com/hotelImages/${exp.hotelImage}`} alt="Hotel" loading='lazy' />
                                 <h4>{exp.hotelName}</h4>
                                 <p>₹{exp.hotelBudget}/per night</p>
                                 <button onClick={() => setSelectedHotel(exp)}>Select</button>
@@ -228,7 +228,7 @@ const TripPlanner = () => {
                     <div className="scroll-container" ref={placeScrollRef}>
                         {placesToShow.map((place, i) => (
                             <div key={i} className='card'>
-                                <img src={`http://localhost:5000/placeImages/${place.placeImage}`} alt={place.name} />
+                                <img src={`https://tripinary-backend.onrender.com/placeImages/${place.placeImage}`} alt={place.name} loading='lazy'/>
                                 <h4>{place.name}</h4>
                                 <p>₹{place.budget}</p>
                                 <button onClick={() => togglePlace(place)}>
@@ -252,7 +252,7 @@ const TripPlanner = () => {
                     <div className="scroll-container" ref={adventureScrollRef}>
                         {adventuresToShow.map((adv, i) => (
                             <div key={i} className='card'>
-                                <img src={`http://localhost:5000/sportImages/${adv.sportImage}`} alt={adv.name} />
+                                <img src={`https://tripinary-backend.onrender.com/sportImages/${adv.sportImage}`} alt={adv.name} loading='lazy'/>
                                 <h4>{adv.name}</h4>
                                 <p>₹{adv.budget}</p>
                                 <button onClick={() => toggleAdventure(adv)}>
@@ -281,7 +281,7 @@ const TripPlanner = () => {
                             <button className="btnC exclude-from-pdf" onClick={() => setItineraryPreview(null)}>❌</button>
                         </div>
                         <div className="popb2">
-                            <img src={`http://localhost:5000/hotelImages/${itineraryPreview.hotel.hotelImage}`} alt="hotel" />
+                            <img src={`https://tripinary-backend.onrender.com/hotelImages/${itineraryPreview.hotel.hotelImage}`} alt="hotel" loading='lazy'/>
                             <h3>{itineraryPreview.hotel.hotelName}</h3>
                         </div>
                         <div className="popb4">

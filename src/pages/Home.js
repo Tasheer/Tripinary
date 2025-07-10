@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const fetchRandomExperiences = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/experience/random');
+                const res = await axios.get('https://tripinary-backend.onrender.com/api/experience/random');
                 setRandomExperiences(res.data);
             } catch (error) {
                 console.error('Error fetching random experiences:', error);
@@ -27,7 +27,7 @@ const Home = () => {
 
     const handleSearch = async (city) => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/experience/${city}`);
+            const res = await axios.get(`https://tripinary-backend.onrender.com/api/experience/${city}`);
             setResults(res.data);
         } catch (error) {
             console.error('Error fetching search results:', error);
@@ -112,8 +112,9 @@ const Home = () => {
                             <div key={index} className="homeCard">
                                 <div className='cardT'>
                                     <img
-                                        src={`http://localhost:5000/hotelImages/${exp.hotelImage}`}
+                                        src={`https://tripinary-backend.onrender.com/hotelImages/${exp.hotelImage}`}
                                         alt="hotel"
+                                        loading='lazy'
                                     />
                                 </div>
                                 <div className="cardB">
@@ -141,8 +142,9 @@ const Home = () => {
                         <div key={index} className="card">
                             <div className="cardT">
                                 <img
-                                    src={`http://localhost:5000/hotelImages/${exp.hotelImage}`}
+                                    src={`https://tripinary-backend.onrender.com/hotelImages/${exp.hotelImage}`}
                                     alt={exp.hotelName}
+                                    loading='lazy'
                                 />
                             </div>
                             <div className="cardB">
@@ -178,8 +180,9 @@ const Home = () => {
                         </div>
                         <div className="popb2">
                             <img className='img'
-                                src={`http://localhost:5000/hotelImages/${selectedExperience.hotelImage}`}
+                                src={`https://tripinary-backend.onrender.com/hotelImages/${selectedExperience.hotelImage}`}
                                 alt="hotel"
+                                loading='lazy'
                             />
                             <p>{selectedExperience.hotelName}</p>
                         </div>

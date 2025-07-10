@@ -9,7 +9,7 @@ const About = () => {
     return (
         <div>
             <Navbar />
-            <img src={banner} alt="" className='banner' />
+            <img src={banner} alt="" className='banner'/>
             <div className="about-container">
                 <h1>About Tripinary</h1>
                 <p className="tagline">Your Smart Travel Companion</p>
